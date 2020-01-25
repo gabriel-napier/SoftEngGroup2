@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6c3a08b5-f829-4b6c-b2be-f47119dd44f0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-    </list>
+    <list default="true" id="0e82e2ee-f63b-4367-a395-1af97e4d8687" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +10,7 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="clackie1996 &lt;c.lackie1996@gmail.com&gt;" />
         <option value="Fraser83 &lt;fmaclean@gmail.com&gt;" />
         <option value="Fraser" />
       </list>
@@ -63,10 +62,15 @@
     <option name="LAST_COMMIT_MESSAGE" value="Added GitIgnore info" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="580" y="175" key="CommitChangelistDialog2" timestamp="1579951014315">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state x="2678" y="366" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1579951924057">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2678" y="366" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1579951924057" />
+    <state x="2500" y="158" key="CommitChangelistDialog2" timestamp="1579951874755">
+      <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state x="580" y="175" key="CommitChangelistDialog2/-2736.-638.1368.892/1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1579951014315" />
+    <state x="2500" y="158" key="CommitChangelistDialog2/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1579951874755" />
     <state x="552" y="313" key="Vcs.Push.Dialog.v2" timestamp="1579951043285">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
