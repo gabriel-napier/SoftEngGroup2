@@ -9,7 +9,7 @@ public class App
         try
         {
             // Load Database driver
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
         }
         catch (ClassNotFoundException e)
         {
@@ -28,7 +28,7 @@ public class App
                 // Wait a bit for db to start
                 Thread.sleep(30000);
                 // Connect to database
-                con = DriverManager.getConnection("jdbc:mysql://softenggroup2_feature_db_1:3306/world", "root", "example");
+                con = DriverManager.getConnection("jdbc:mysql://mysql1:3306/world?" + "user=root&password=example");
                 System.out.println("Successfully connected");
                 // Wait a bit
                 Thread.sleep(10000);
@@ -39,6 +39,9 @@ public class App
             {
                 System.out.println("Failed to connect to database attempt " + Integer.toString(i));
                 System.out.println(sqle.getMessage());
+                System.out.println("SQLException: " + sqle.getMessage());
+                System.out.println("SQLState: " + sqle.getSQLState());
+                System.out.println("VendorError: " + sqle.getErrorCode());
             }
             catch (InterruptedException ie)
             {
