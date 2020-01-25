@@ -20,7 +20,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.napier.sem.App</mainClass>
+                            <mainClass>SoftEngAPP</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
