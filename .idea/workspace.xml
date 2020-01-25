@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c3a08b5-f829-4b6c-b2be-f47119dd44f0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +29,15 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.idea" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\fraserma\IdeaProjects\SoftEngGroup2\.idea" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\fraserma\IdeaProjects\SoftEngGroup2" />
+    </key>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -51,8 +61,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1579950395148</updated>
-      <workItem from="1579950400216" duration="524000" />
+      <workItem from="1579950400216" duration="1942000" />
     </task>
+    <task id="LOCAL-00001" summary="Added GitIgnore info">
+      <created>1579951016452</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1579951016452</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Moved GitIgnore to /root">
+      <created>1579951157318</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1579951157318</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -60,20 +85,29 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added GitIgnore info" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added GitIgnore info" />
+    <MESSAGE value="Moved GitIgnore to /root" />
+    <option name="LAST_COMMIT_MESSAGE" value="Moved GitIgnore to /root" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="580" y="175" key="CommitChangelistDialog2" timestamp="1579951014315">
+    <state x="580" y="175" key="CommitChangelistDialog2" timestamp="1579951154825">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state x="580" y="175" key="CommitChangelistDialog2/-2736.-638.1368.892/1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1579951014315" />
-    <state x="552" y="313" key="Vcs.Push.Dialog.v2" timestamp="1579951043285">
+    <state x="580" y="175" key="CommitChangelistDialog2/-2736.-638.1368.892/1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1579951154825" />
+    <state x="740" y="335" key="FileChooserDialogImpl" timestamp="1579952192834">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state x="552" y="313" key="Vcs.Push.Dialog.v2/-2736.-638.1368.892/1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1579951043285" />
-    <state x="657" y="372" key="git4idea.merge.GitPullDialog" timestamp="1579950487439">
+    <state x="740" y="335" key="FileChooserDialogImpl/-2736.-638.1368.892/1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1579952192834" />
+    <state x="552" y="313" key="Vcs.Push.Dialog.v2" timestamp="1579951165941">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state x="657" y="372" key="git4idea.merge.GitPullDialog/-2736.-638.1368.892/1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1579950487439" />
+    <state x="552" y="313" key="Vcs.Push.Dialog.v2/-2736.-638.1368.892/1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1579951165941" />
+    <state x="736" y="372" key="git4idea.merge.GitMergeDialog" timestamp="1579951359109">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state x="736" y="372" key="git4idea.merge.GitMergeDialog/-2736.-638.1368.892/1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1579951359109" />
+    <state x="657" y="372" key="git4idea.merge.GitPullDialog" timestamp="1579952048079">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state x="657" y="372" key="git4idea.merge.GitPullDialog/-2736.-638.1368.892/1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1579952048079" />
   </component>
 </project>
