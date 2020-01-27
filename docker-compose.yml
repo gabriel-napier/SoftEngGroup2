@@ -1,0 +1,15 @@
+version: '3'
+services:
+  # OpenJDK Dockerfile is in same folder which is .
+  app:
+    build: .
+    container_name: app1
+
+  # MySQL is is MySQL folder
+  db:
+    build: MySQL/.
+    container_name: mysql1
+    ports:
+      - 3306:3306
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
