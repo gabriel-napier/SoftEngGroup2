@@ -1,4 +1,4 @@
-- Master Build Status [![Build Status](https://travis-ci.com/gabriel-napier/SoftEngGroup2?branch=master)](https://travis-ci.com/gabriel-napier/SoftEngGroup2)
-- Develop Build Status [![Build Status](https://travis-ci.com/gabriel-napier/SoftEngGroup2?branch=develop)](https://travis-ci.com/gabriel-napier/SoftEngGroup2)
+- Master Build Status [![Build Status](https://travis-ci.com/gabriel-napier/SoftEngGroup2.svg?branch=master)](https://travis-ci.com/gabriel-napier/SoftEngGroup2)
+- Develop Build Status [![Build Status](https://travis-ci.com/gabriel-napier/SoftEngGroup2.svg?branch=develop)](https://travis-ci.com/gabriel-napier/SoftEngGroup2)
 - License [![LICENSE](https://img.shields.io/github/license/gabriel-napier/SoftEngGroup2.svg?style=flat-square)](https://github.com/gabriel-napier/SoftEngGroup2/blob/master/LICENSE)
 - Release [![Releases](https://img.shields.io/github/release/gabriel-napier/SoftEngGroup2/all.svg?style=flat-square)](https://github.com/gabriel-napier/SoftEngGroup2/releases)
