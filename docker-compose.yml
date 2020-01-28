@@ -1,3 +1,4 @@
+# docker-compose file to build/run containers
 version: '3'
 services:
   # OpenJDK Dockerfile is in same folder which is .
