@@ -11,6 +11,7 @@ public class App
             // Load Database driver
             Class.forName("com.mysql.cj.jdbc.Driver");
         }
+       // Catch and console log error if error found
         catch (ClassNotFoundException e)
         {
             System.out.println("Could not load SQL driver");
@@ -49,11 +50,12 @@ public class App
             }
         }
 
+        // Attempt to close database connection
         if (con != null)
         {
             try
             {
-                // Close connection
+                // Close database connection
                 con.close();
             }
             catch (Exception e)
