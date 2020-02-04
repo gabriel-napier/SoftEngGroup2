@@ -1,7 +1,12 @@
 package SoftEngAPP;
 
+import java.lang.System.*;
 import java.sql.*;
+import java.io.File;
 
+/**
+ * more comments!
+ */
 public class App
 {
     public static void main(String[] args)
@@ -49,6 +54,11 @@ public class App
                 System.out.println("Thread interrupted? Should not happen.");
             }
         }
+
+
+        File curDir = new File(".");
+        String[] fileNames = curDir.list();
+        System.out.println(fileNames);
 
         // Attempt to close database connection
         if (con != null)
