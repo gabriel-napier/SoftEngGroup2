@@ -14,3 +14,16 @@ services:
       - 3306:3306
     command: --default-authentication-plugin=mysql_native_password
     restart: always
+
+  # PhpMyAdmin Docker container
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    links:
+      - db
+    expose:
+      - "80"
+    environment:
+      - VIRTUAL_HOST=phpmyadmin.io
+      - PMA_USER=user
+      - PMA_PASSWORD=example
