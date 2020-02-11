@@ -1,0 +1,4 @@
+{
+  "NAME":  "test01",
+  "QUERY":  "SELECT * FROM COUNTRY LIMIT 1"
+}
