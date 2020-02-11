@@ -19,11 +19,13 @@ services:
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: phpmyadmin
+    ports:
+      - 80:80
     links:
       - db
     expose:
       - "80"
     environment:
       - VIRTUAL_HOST=phpmyadmin.io
-      - PMA_USER=user
+      - PMA_USER=root
       - PMA_PASSWORD=example
