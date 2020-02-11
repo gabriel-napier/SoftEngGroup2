@@ -59,9 +59,11 @@ public class App
 
         File curDir = new File(".");
         String[] fileNames = curDir.list();
-        for (int i = 0; i == fileNames.length - 1; i++) {
+
+        for (int i = 0; i <= fileNames.length - 1; i++) {
             System.out.println(fileNames[i]);
         }
+
 
         // Attempt to close database connection
         if (con != null)
