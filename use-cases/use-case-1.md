@@ -1,44 +1,44 @@
-# USE CASE: <number> <the name should be the goal as a short active verb phrase>
+# USE CASE: 1 - Utilise the system to produce any given report  
 
 ## CHARACTERISTIC INFORMATION
 
 ### Goal in Context
 
-*a longer statement of the goal, if needed*
+*As a researcher I want to access the system and produce any given report from the available selection of reports*
 
 ### Scope
 
-*what system is considered black-box under design*
+*Company*
 
 ### Level
 
-*one of: Summary, Primary task, subfunction*
+*Primary task*
 
 ### Preconditions
 
-*what we expect is already the state of the world*
+*We know the role. Database contains all relevant data*
 
 ### Success End Condition
 
-*the state of the world upon successful completion*
+*A report is generated*
 
 ### Failed End Condition
 
-*the state of the world if goal abandoned*
+*No report is produced*
 
 ### Primary Actor
 
-*a role name for the primary actor, or description*
+*Researcher*
 
 ### Trigger
 
-*the action upon the system that starts the use case, may be a time event*
+*ad-hoc - upon request*
 
 ## MAIN SUCCESS SCENARIO
 
-*put here the steps of the scenario from trigger to goal delivery, and any cleanup after*
-
-1. action description
+1. Researcher accesses system
+2. Researcher selects type of report required
+3. Researcher generates report
 
 ## EXTENSIONS
 
