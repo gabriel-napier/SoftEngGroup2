@@ -70,7 +70,9 @@ public class App
 
         try {
 
-            Object object = gson.fromJson(new FileReader(jsonFile), Object.class);
+        SQLquery test123 = gson.fromJson(new FileReader(jsonFile), SQLquery.class);
+
+        System.out.println(test123.sql.toString());
 
         } catch (Exception e) {
             e.printStackTrace();
