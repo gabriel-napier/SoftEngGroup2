@@ -3,7 +3,7 @@ package SoftEngAPP;
 import java.io.FileReader;
 import java.lang.System.*;
 import java.sql.*;
-import java.io.File;
+import java.io.*;
 import com.google.gson.*;
 import com.google.gson.stream.JsonReader;
 
@@ -60,12 +60,13 @@ public class App
 
         File curDir = new File(".");
         String[] fileNames = curDir.list();
-        String jsonFile = "./test01.json";
+        String jsonFile = "test01.json";
         for (int i = 0; i <= fileNames.length - 1; i++) {
             System.out.println(fileNames[i]);
+            System.out.println(curDir.getPath().toString());
         }
         Gson gson = new Gson();
-        JsonReader reader = new JsonReader(new FileReader(jsonFile));
+        //Object object = gson.fromJson(new FileReader(jsonFile), Object.class);
 
 
         // Attempt to close database connection
@@ -88,4 +89,6 @@ public class App
         public String sql;
 
     }
+
+
 }
