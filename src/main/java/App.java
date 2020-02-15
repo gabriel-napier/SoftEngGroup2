@@ -60,13 +60,13 @@ public class App
 
         File curDir = new File(".");
         String[] fileNames = curDir.list();
-        String jsonFile = "test01.json";
+        String jsonFile = "./test01.json";
         for (int i = 0; i <= fileNames.length - 1; i++) {
             System.out.println(fileNames[i]);
             System.out.println(curDir.getPath().toString());
         }
         Gson gson = new Gson();
-        //Object object = gson.fromJson(new FileReader(jsonFile), Object.class);
+        Object object = gson.fromJson(new FileReader(jsonFile), Object.class);
 
 
         // Attempt to close database connection
@@ -87,6 +87,18 @@ public class App
 
         public String name;
         public String sql;
+
+    }
+
+    public void getJson(String fileName) {
+
+        Gson gson = new Gson();
+        SQLquery test123 = null;
+        try {
+            test123 = gson.fromJson(new FileReader(fileName), SQLquery.class);
+        } catch (FileNotFoundException e) {
+            System.out.println(test123.sql);
+        }
 
     }
 
