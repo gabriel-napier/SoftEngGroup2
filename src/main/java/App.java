@@ -2,6 +2,9 @@ package SoftEngAPP;
 
 import java.io.FileReader;
 import java.lang.System.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.*;
 import java.io.*;
 import com.google.gson.*;
@@ -13,8 +16,8 @@ import jdk.nashorn.internal.parser.JSONParser;
  */
 public class App
 {
-    public static void main(String[] args)
-    {
+
+    public static void main(String[] args) throws IOException {
         try
         {
             // Load Database driver
@@ -41,7 +44,7 @@ public class App
                 con = DriverManager.getConnection("jdbc:mysql://mysql1:3306/world?" + "user=root&password=example");
                 System.out.println("Successfully connected");
                 // Wait a bit
-                Thread.sleep(10000);
+                Thread.sleep(1000);
                 // Exit for loop
                 break;
             }
@@ -68,34 +71,26 @@ public class App
         }
         Gson gson = new Gson();
 
-        try (Reader reader = new FileReader("./test01.json")) {
+        try (Reader reader = new FileReader("test01.json")) {
 
             SQLquery test123 = gson.fromJson(reader, SQLquery.class);
 
             System.out.println(test123.name);
             System.out.println(test123.sql);
-            System.out.println(reader.toString());
         } catch ( IOException e) {
             e.printStackTrace();
         }
 
+        String lofasz = new String(Files.readAllBytes(Paths.get("test01.json")));
+        //System.out.println(lofasz);
+        String lofasz2 = new String(Files.readAllBytes(Paths.get("test02.json")));
+        String lofasz3 = new String (Files.readAllBytes(Paths.get("test03.json")));
+        //System.out.println("ASD " + lofasz2);
+        //System.out.println("MASD " + lofasz3);
 
+        SQLquery urmum = new SQLquery(lofasz2, lofasz3);
 
-
-
-        /*/
-        try {
-
-        SQLquery test123 = gson.fromJson(new FileReader(jsonFile), SQLquery.class);
-
-        System.out.println(test123.sql);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        /*/
-
-
+        System.out.println("TEST SQL IS " + urmum.sql);
 
         // Attempt to close database connection
         if (con != null)
@@ -110,25 +105,19 @@ public class App
                 System.out.println("Error closing connection to database");
             }
         }
-    }
-    public class SQLquery {
-
-        public String name = "pp big";
-        public String sql = "pp smol";
 
     }
+    public static class SQLquery {
 
-    public void getJson(String fileName) {
+        public String name;
+        public String sql;
 
-        Gson gson = new Gson();
-        SQLquery test123 = null;
-        try {
-            test123 = gson.fromJson(new FileReader(fileName), SQLquery.class);
-        } catch (FileNotFoundException e) {
-            System.out.println(test123.sql);
+        public SQLquery(String newname, String newsql) {
+            this.name = newname;
+            this.sql = newsql;
         }
 
-    }
 
+    }
 
 }

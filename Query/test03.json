@@ -1,0 +1,1 @@
+{"QUERY":  "use `world`; SELECT * FROM COUNTRY LIMIT 1;"}
