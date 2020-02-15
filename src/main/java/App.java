@@ -112,8 +112,8 @@ public class App
     }
     public class SQLquery {
 
-        public String name;
-        public String sql;
+        public String name = "pp big";
+        public String sql = "pp smol";
 
     }
 
