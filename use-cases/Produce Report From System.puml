@@ -1,20 +1,17 @@
 @startuml
-:Main Admin: as Admin
-(Use the application) as (Use)
 
-User -> (Start)
-User --> (Use)
+actor User as "Researcher"
 
-Admin ---> (Use)
+rectangle Database
 
-note right of Admin : This is an example.
+rectangle "Reports System" {
+    usecase UC4 as "Select report type to generate"
 
-note right of (Use)
-A note can also
-be on several lines
-end note
+    usecase UCa as "Generate report"
 
-note "This note is connected\nto several objects." as N2
-(Start) .. N2
-N2 .. (Use)
+    User - UC4
+    UC4 ..> UCa : include
+    UCa - Database
+}
+
 @enduml
