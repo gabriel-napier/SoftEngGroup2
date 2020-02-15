@@ -74,6 +74,7 @@ public class App
 
             System.out.println(test123.name);
             System.out.println(test123.sql);
+            System.out.println(reader.toString());
         } catch ( IOException e) {
             e.printStackTrace();
         }
