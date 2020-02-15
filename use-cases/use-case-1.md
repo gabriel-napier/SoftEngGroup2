@@ -44,16 +44,12 @@
 
 *put here the extensions, one at a time, each referring to the step of the main scenario*
 
-1. **Condition**: action of sub use case
+3. **Report does not exist**: Researcher reevaluates request
 
 ## SUB-VARIATIONS
 
-*put here the sub-variations that will cause eventual branching in the scenario
-
-1. list of sub-variations
+None.
 
 ## SCHEDULE
 
-**DUE DATE**: *date or release of deployment*
-
-*any other schedule/staffing information you need*
+**DUE DATE**: Release 1.0.0
