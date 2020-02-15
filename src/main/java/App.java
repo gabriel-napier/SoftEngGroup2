@@ -6,6 +6,7 @@ import java.sql.*;
 import java.io.*;
 import com.google.gson.*;
 import com.google.gson.stream.JsonReader;
+import jdk.nashorn.internal.parser.JSONParser;
 
 /**
  * more comments!
@@ -66,7 +67,16 @@ public class App
             System.out.println(curDir.getPath().toString());
         }
         Gson gson = new Gson();
-        Object object = gson.fromJson(new FileReader(jsonFile), Object.class);
+
+        try {
+
+            Object object = gson.fromJson(new FileReader(jsonFile), Object.class);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
 
 
         // Attempt to close database connection
