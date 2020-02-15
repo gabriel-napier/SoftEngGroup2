@@ -1,9 +1,11 @@
 package SoftEngAPP;
 
+import java.io.FileReader;
 import java.lang.System.*;
 import java.sql.*;
 import java.io.File;
-import org.json.*;
+import com.google.gson.*;
+import com.google.gson.stream.JsonReader;
 
 /**
  * more comments!
@@ -59,10 +61,12 @@ public class App
 
         File curDir = new File(".");
         String[] fileNames = curDir.list();
-
+        String jsonFile = "test01.json";
         for (int i = 0; i <= fileNames.length - 1; i++) {
             System.out.println(fileNames[i]);
         }
+        Gson gson = new Gson();
+        JsonReader reader = new JsonReader(new FileReader(jsonFile));
 
 
         // Attempt to close database connection
@@ -78,5 +82,11 @@ public class App
                 System.out.println("Error closing connection to database");
             }
         }
+    }
+    public class SQLquery {
+
+        public String name;
+        public String sql;
+
     }
 }
