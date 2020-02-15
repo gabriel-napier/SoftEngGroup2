@@ -61,14 +61,14 @@ public class App
 
         File curDir = new File(".");
         String[] fileNames = curDir.list();
-        String jsonFile = "./test01.json";
+        //String jsonFile = "./test01.json";
         for (int i = 0; i <= fileNames.length - 1; i++) {
             System.out.println(fileNames[i]);
             System.out.println(curDir.getPath().toString());
         }
         Gson gson = new Gson();
 
-        try (Reader reader = new FileReader("test01.json")) {
+        try (Reader reader = new FileReader("./test01.json")) {
 
             SQLquery test123 = gson.fromJson(reader, SQLquery.class);
 
