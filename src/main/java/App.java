@@ -72,7 +72,7 @@ public class App
 
         SQLquery test123 = gson.fromJson(new FileReader(jsonFile), SQLquery.class);
 
-        System.out.println(test123.sql.toString());
+        System.out.println(test123.sql);
 
         } catch (Exception e) {
             e.printStackTrace();
