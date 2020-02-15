@@ -68,6 +68,20 @@ public class App
         }
         Gson gson = new Gson();
 
+        try (Reader reader = new FileReader("test01.json")) {
+
+            SQLquery test123 = gson.fromJson(reader, SQLquery.class);
+
+            System.out.println(test123);
+        } catch ( IOException e) {
+            e.printStackTrace();
+        }
+
+
+
+
+
+        /*/
         try {
 
         SQLquery test123 = gson.fromJson(new FileReader(jsonFile), SQLquery.class);
@@ -77,7 +91,7 @@ public class App
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+        /*/
 
 
 
