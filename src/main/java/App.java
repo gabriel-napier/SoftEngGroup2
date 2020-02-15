@@ -72,7 +72,8 @@ public class App
 
             SQLquery test123 = gson.fromJson(reader, SQLquery.class);
 
-            System.out.println(test123);
+            System.out.println(test123.name);
+            System.out.println(test123.sql);
         } catch ( IOException e) {
             e.printStackTrace();
         }
