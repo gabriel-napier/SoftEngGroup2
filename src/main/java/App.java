@@ -89,12 +89,21 @@ public class App
 
             ResultSet asd = statement.executeQuery(query.sql);
             while (asd.next()) {
+                ResultSetMetaData rsmd = asd.getMetaData();
+                int columnsnumber = rsmd.getColumnCount();
                 String output = "";
-                output = output + asd.getInt("ID") + "\t";
+                for (int i = 1; i < columnsnumber + 1; i++) {
+                    String name = rsmd.getColumnName(i);
+                    output = output + asd.getString(name) + "\t";
+                }
+
+
+                /**
+                output = output + asd.getString("ID") + "\t";
                 output = output + asd.getString("Name") + "\t";
                 output = output + asd.getString("CountryCode") + "\t";
                 output = output + asd.getString("District") + "\t";
-                output = output + asd.getInt("Population") + "\n";
+                 */
                 System.out.println(output);
             }
 
