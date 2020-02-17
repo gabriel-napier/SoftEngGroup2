@@ -1,4 +1,1 @@
--- TEST QUERY 01
-
-use `world`;
-select * from city limit 1;
+select * from world.city limit 1

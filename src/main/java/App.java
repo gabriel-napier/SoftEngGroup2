@@ -1,15 +1,15 @@
 package SoftEngAPP;
 
-import java.io.FileReader;
-import java.lang.System.*;
+import com.mysql.cj.PreparedQuery;
+import com.mysql.cj.x.protobuf.MysqlxPrepare;
+
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.sql.*;
 import java.io.*;
-import com.google.gson.*;
-import com.google.gson.stream.JsonReader;
-import jdk.nashorn.internal.parser.JSONParser;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Properties;
 
 /**
  * more comments!
@@ -17,7 +17,7 @@ import jdk.nashorn.internal.parser.JSONParser;
 public class App
 {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, SQLException {
         try
         {
             // Load Database driver
@@ -43,6 +43,7 @@ public class App
                 // Connect to database
                 con = DriverManager.getConnection("jdbc:mysql://mysql1:3306/world?" + "user=root&password=example");
                 System.out.println("Successfully connected");
+                //con.setCatalog("world");
                 // Wait a bit
                 Thread.sleep(1000);
                 // Exit for loop
@@ -61,38 +62,45 @@ public class App
                 System.out.println("Thread interrupted? Should not happen.");
             }
         }
-
+        List<String> querynames = new ArrayList<String>();
+        List<SQLquery> queries = new ArrayList<SQLquery>();
         File curDir = new File(".");
         String[] fileNames = curDir.list();
-        //String jsonFile = "./test01.json";
         for (int i = 0; i <= fileNames.length - 1; i++) {
             System.out.println(fileNames[i]);
-            System.out.println(curDir.getPath().toString());
-        }
-        Gson gson = new Gson();
+            if (fileNames[i].contains(".sql")) {
+                querynames.add(fileNames[i]);
+            }
 
-        try (Reader reader = new FileReader("test01.json")) {
-
-            SQLquery test123 = gson.fromJson(reader, SQLquery.class);
-
-            System.out.println(test123.name);
-            System.out.println(test123.sql);
-        } catch ( IOException e) {
-            e.printStackTrace();
         }
 
-        String lofasz = new String(Files.readAllBytes(Paths.get("test01.json")));
-        //System.out.println(lofasz);
-        String lofasz2 = new String(Files.readAllBytes(Paths.get("test02.json")));
-        String lofasz3 = new String (Files.readAllBytes(Paths.get("test03.json")));
-        //System.out.println("ASD " + lofasz2);
-        //System.out.println("MASD " + lofasz3);
+        for ( String querypath : querynames ) {
 
-        SQLquery urmum = new SQLquery(lofasz2, lofasz3);
+            String content = new String(Files.readAllBytes(Paths.get(querypath)));
+            SQLquery newquery = new SQLquery(querypath,content);
+            queries.add(newquery);
+        }
 
-        System.out.println("TEST SQL IS " + urmum.sql);
+        for (SQLquery query : queries) {
+            System.out.println(query.name);
+            System.out.println(query.sql);
 
-        // Attempt to close database connection
+            Statement statement = con.createStatement();
+
+            ResultSet asd = statement.executeQuery(query.sql);
+            while (asd.next()) {
+                String output = "";
+                output = output + asd.getInt("ID") + "\t";
+                output = output + asd.getString("Name") + "\t";
+                output = output + asd.getString("CountryCode") + "\t";
+                output = output + asd.getString("District") + "\t";
+                output = output + asd.getInt("Population") + "\n";
+                System.out.println(output);
+            }
+
+        }
+
+
         if (con != null)
         {
             try
@@ -107,6 +115,8 @@ public class App
         }
 
     }
+
+
     public static class SQLquery {
 
         public String name;
