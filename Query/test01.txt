@@ -1,2 +1,0 @@
-#NAME--TEST01
-#QUERY--use `world`; select * from country limit 1;
