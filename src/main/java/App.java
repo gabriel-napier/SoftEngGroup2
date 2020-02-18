@@ -85,6 +85,9 @@ public class App
             System.out.println(query.name);
             System.out.println(query.sql);
 
+            System.out.println(getQueryResult(query, con));
+
+/**
             Statement statement = con.createStatement();
 
             ResultSet asd = statement.executeQuery(query.sql);
@@ -94,19 +97,12 @@ public class App
                 String output = "";
                 for (int i = 1; i < columnsnumber + 1; i++) {
                     String name = rsmd.getColumnName(i);
-                    output = output + asd.getString(name) + "\t";
+                    output = output + asd.getString(name) + ",";
                 }
 
-
-                /**
-                output = output + asd.getString("ID") + "\t";
-                output = output + asd.getString("Name") + "\t";
-                output = output + asd.getString("CountryCode") + "\t";
-                output = output + asd.getString("District") + "\t";
-                 */
                 System.out.println(output);
             }
-
+*/
         }
 
 
@@ -125,6 +121,20 @@ public class App
 
     }
 
+    public static String getQueryResult(SQLquery query, Connection con) throws SQLException {
+        Statement stmt = con.createStatement();
+        ResultSet result = stmt.executeQuery(query.sql);
+        String output = "";
+        while (result.next()) {
+            ResultSetMetaData rsmd = result.getMetaData();
+            int columnsnumber = rsmd.getColumnCount();
+            for (int i = 1; i < columnsnumber + 1; i++) {
+                String name = rsmd.getColumnName(i);
+                output = output + result.getString(name) + ",";
+            }
+        }
+        return output;
+    }
 
     public static class SQLquery {
 
