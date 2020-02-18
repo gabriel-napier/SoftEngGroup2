@@ -1,0 +1,17 @@
+@startuml
+
+actor User as "Researcher"
+
+rectangle Database
+
+rectangle "Reports System" {
+    usecase UC4 as "Select report type to generate"
+
+    usecase UCa as "Generate report"
+
+    User - UC4
+    UC4 ..> UCa : include
+    UCa - Database
+}
+
+@enduml
