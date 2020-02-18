@@ -156,7 +156,8 @@ public class App
 
     /**
      * SQLquery class
-     * used to create SQL query objects that can later be referred to for listing queries and running the desired database query by user
+     * used to create SQL query objects that can later be referred to for listing queries and running
+     * the desired database query by user
      */
     public static class SQLquery {
 
@@ -171,13 +172,14 @@ public class App
     }
 
     /**
-     * updateQueryList loads the available SQL query strings from .xyz files in the runtime folder into a List so that they may be called on demand
+     * updateQueryList loads the available SQL query strings from .xyz files in the /mydata/data docker volume folder
+     * into a List so that they may be called on demand
      */
     public static List<SQLquery> updateQueryList() throws IOException {
 
         List<String> querynames = new ArrayList<String>();
         List<SQLquery> queries = new ArrayList<SQLquery>();
-        File curDir = new File(".");
+        File curDir = new File("../mydata/data/.");
         String[] fileNames = curDir.list();
 
         for (int i = 0; i <= fileNames.length - 1; i++) {
