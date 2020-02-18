@@ -62,6 +62,7 @@ public class App
                 System.out.println("Thread interrupted? Should not happen.");
             }
         }
+
         List<String> querynames = new ArrayList<String>();
         List<SQLquery> queries = new ArrayList<SQLquery>();
         File curDir = new File(".");
@@ -86,23 +87,6 @@ public class App
             System.out.println(query.sql);
 
             System.out.println(getQueryResult(query, con));
-
-/**
-            Statement statement = con.createStatement();
-
-            ResultSet asd = statement.executeQuery(query.sql);
-            while (asd.next()) {
-                ResultSetMetaData rsmd = asd.getMetaData();
-                int columnsnumber = rsmd.getColumnCount();
-                String output = "";
-                for (int i = 1; i < columnsnumber + 1; i++) {
-                    String name = rsmd.getColumnName(i);
-                    output = output + asd.getString(name) + ",";
-                }
-
-                System.out.println(output);
-            }
-*/
         }
 
 
@@ -130,7 +114,11 @@ public class App
             int columnsnumber = rsmd.getColumnCount();
             for (int i = 1; i < columnsnumber + 1; i++) {
                 String name = rsmd.getColumnName(i);
-                output = output + result.getString(name) + ",";
+                if (i == columnsnumber) {
+                    output = output + result.getString(name) + "\n";
+                } else {
+                    output = output + result.getString(name) + ",";
+                }
             }
         }
         return output;
