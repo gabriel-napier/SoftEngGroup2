@@ -12,8 +12,5 @@ install:
 after_success:
   - docker-compose up --abort-on-container-exit
 
-before_script:
-  - mvn clean
-
 script:
   - mvn test
