@@ -7,4 +7,4 @@ COPY Query/* /tmp/
 # set working directory for application
 WORKDIR /tmp
 # define entrypoint to run java application
-ENTRYPOINT ["java", "-jar", "SoftEngGroup2-1.0-SNAPSHOT-jar-with-dependencies.jar"]
+ENTRYPOINT ["java", "-jar", "com.napier.sem-1.0-SNAPSHOT-jar-with-dependencies.jar"]
