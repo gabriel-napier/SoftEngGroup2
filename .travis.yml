@@ -1,16 +1,20 @@
 #travis file to run docker-compose
-    sudo: required
+sudo: required
 
-    language: java
+language: java
 
-    services:
-      - docker
+addons:
+  hosts:
+    - db
 
-    install:
-      - docker build -t database db/.
-      - docker run --rm -d -e MYSQL_ROOT_PASSWORD=example -p 33060:3306 database
-      - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+services:
+  - docker
 
-    after_success:
-      - docker-compose up --abort-on-container-exit
-      - mvn test -Dtest=com.napier.sem.MyTest
+install:
+  - docker build -t database MySQL/.
+  - docker run --rm -d -e MYSQL_ROOT_PASSWORD=example -p 33060:3306 database
+  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+
+after_success:
+  - docker-compose up --abort-on-container-exit
+  - mvn test -Dtest=com.napier.sem.MyTest
