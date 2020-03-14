@@ -1,0 +1,1 @@
+select * from world.country order by population limit 10

@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>SoftEngAPP</groupId>
-    <artifactId>SoftEngGroup2</artifactId>
+    <groupId>com.napier.sem</groupId>
+    <artifactId>com.napier.sem</artifactId>
     <version>1.0-SNAPSHOT</version>
 
 <!--compiler settings-->
@@ -20,6 +20,13 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.19</version>
         </dependency>
+<!--adding JUnit -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.1.0</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 <!-- build settings -->
     <build>
@@ -29,7 +36,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>SoftEngAPP.App</mainClass>
+                            <mainClass>com.napier.sem</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
@@ -45,6 +52,23 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.19.1</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.junit.platform</groupId>
+                        <artifactId>junit-platform-surefire-provider</artifactId>
+                        <version>1.1.0</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.junit.jupiter</groupId>
+                        <artifactId>junit-jupiter-engine</artifactId>
+                        <version>5.1.0</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>
