@@ -3,6 +3,10 @@ sudo: required
 
 language: java
 
+addons:
+  hosts:
+    - db
+
 services:
   - docker
 
