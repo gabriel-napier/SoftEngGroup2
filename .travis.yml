@@ -16,4 +16,4 @@ before_script:
   - mvn clean
 
 script:
-  - mvn test -Dtest=com.napier.sem.MyTest
+  - mvn -Dtest=MyTest test
