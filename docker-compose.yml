@@ -5,6 +5,8 @@ services:
   app:
     build: .
     container_name: app1
+    volumes:
+      - mydata:/data
 
   # MySQL is is MySQL folder
   db:
@@ -29,3 +31,6 @@ services:
       - VIRTUAL_HOST=phpmyadmin.io
       - PMA_USER=root
       - PMA_PASSWORD=example
+
+volumes:
+  mydata:
