@@ -6,6 +6,9 @@ language: java
 services:
   - docker
 
+install:
+  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+
 after_success:
   - docker-compose up --abort-on-container-exit
 
@@ -13,4 +16,4 @@ before_script:
   - mvn clean
 
 script:
-  - mvn test -Dtest=com.napier.sem.AppTest
+  - mvn test -Dtest=com.napier.sem.MyTest
