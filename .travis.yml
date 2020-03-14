@@ -16,4 +16,4 @@ before_script:
   - mvn clean
 
 script:
-  - mvn -Dtest=MyTest test
+  - mvn test -Dtest=MyTest
