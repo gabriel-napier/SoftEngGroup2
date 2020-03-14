@@ -49,7 +49,7 @@ class MyTest
                 // Wait a bit for db to start
                 Thread.sleep(30000);
                 // Connect to database
-                con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/world?" + "user=root&password=example");
+                con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:33060/world?" + "user=root&password=example");
                 System.out.println("Successfully connected");
                 //con.setCatalog("world");
                 // Wait a bit
