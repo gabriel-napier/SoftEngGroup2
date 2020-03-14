@@ -11,6 +11,4 @@ install:
 
 after_success:
   - docker-compose up --abort-on-container-exit
-
-after_script:
   - mvn test -Dtest=com.napier.sem.MyTest
