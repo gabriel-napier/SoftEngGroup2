@@ -3,7 +3,7 @@ FROM openjdk:latest
 # copy jar into container
 COPY target/SoftEngGroup2-1.0-SNAPSHOT-jar-with-dependencies.jar /tmp/
 # copy queries to docker volume
-COPY Query/* /mydata/data/
+COPY Query/* /tmp/
 # set working directory for application
 WORKDIR /tmp
 # define entrypoint to run java application

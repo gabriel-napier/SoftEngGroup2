@@ -179,7 +179,7 @@ public class App
 
         List<String> querynames = new ArrayList<String>();
         List<SQLquery> queries = new ArrayList<SQLquery>();
-        File curDir = new File("../mydata/data/.");
+        File curDir = new File(".");
         String[] fileNames = curDir.list();
 
         for (int i = 0; i <= fileNames.length - 1; i++) {
