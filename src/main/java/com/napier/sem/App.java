@@ -1,4 +1,4 @@
-package SoftEngAPP;
+package com.napier.sem;
 
 /**
  *
