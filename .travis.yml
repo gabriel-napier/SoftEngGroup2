@@ -24,13 +24,10 @@ before_script:
 jobs:
   include:
     - stage: unit tests
-      jdk: oraclejdk11
       script: mvn test -Dtest=com.napier.sem.MyTest
     - stage: integration tests
-      jdk: oraclejdk11
       script: mvn test -Dtest=com.napier.sem.AppIntegrationTest
     - stage: deploy
-      jdk: oraclejdk11
       script:
         - mvn package -DskipTests=true -Dmaven.javadoc.skip=true
         - docker-compose up --abort-on-container-exit
