@@ -34,7 +34,7 @@ public class App
         /**
          * Connection to the database, throw relevant exception in case of no success
          */
-        Connection con = connect();
+        Connection con = connect("jdbc:mysql://mysql1:3306/world?" + "user=root&password=example");
 
         /**
          * END OF DATABASE CONNECTION CODE
@@ -172,7 +172,7 @@ public class App
 
     }
 
-    public static Connection connect() {
+    public static Connection connect(String dbstring) {
 
         /**
          * loading JDBC DRIVER
@@ -200,8 +200,6 @@ public class App
                 // Wait a bit for db to start
                 Thread.sleep(30000);
                 // Connect to database
-                String dbstring = "jdbc:mysql://mysql1:3306/world?" + "user=root&password=example";
-                if (timeout == true) { dbstring = "jdbc:mysql://mysql1:33060/world?" + "user=root&password=example";}
                 con = DriverManager.getConnection(dbstring);
                 System.out.println("Successfully connected");
                 //con.setCatalog("world");
