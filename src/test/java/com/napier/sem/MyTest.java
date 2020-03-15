@@ -1,0 +1,41 @@
+package com.napier.sem;
+
+import org.junit.jupiter.api.*;
+import static org.junit.jupiter.api.Assertions.*;
+import com.napier.sem.App;
+import java.sql.*;
+
+import java.sql.DriverManager;
+
+class MyTest
+{
+
+    static App app;
+
+    @BeforeAll
+    static void init()
+    {
+        app = new App();
+    }
+
+    @Test
+    void unitTest() throws SQLException {
+
+        /**
+         * Connection to the database, throw relevant exception in case of no success
+        */
+
+         Connection con = app.connect();
+
+        /**
+         * END OF DATABASE CONNECTION CODE
+         */
+
+
+        app.getQueryResult(new App.SQLquery("01","select * from world.city limit 1"),con);
+
+
+        assertEquals(con.isValid(5), true);
+    }
+
+}

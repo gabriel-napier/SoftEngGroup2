@@ -29,55 +29,13 @@ public class App
 
     public static void main(String[] args) throws IOException, SQLException {
 
-        /**
-         * loading JDBC DRIVER
-         */
-        try
-        {
-            // Load Database driver
-            Class.forName("com.mysql.cj.jdbc.Driver");
-        }
-       // Catch and console log error if error found
-        catch (ClassNotFoundException e)
-        {
-            System.out.println("Could not load SQL driver");
-            System.exit(-1);
-        }
+
 
         /**
          * Connection to the database, throw relevant exception in case of no success
          */
-        Connection con = null;
-        int retries = 100;
-        for (int i = 0; i < retries; ++i)
-        {
-            System.out.println("Connecting to database...");
-            try
-            {
-                // Wait a bit for db to start
-                Thread.sleep(30000);
-                // Connect to database
-                con = DriverManager.getConnection("jdbc:mysql://mysql1:3306/world?" + "user=root&password=example");
-                System.out.println("Successfully connected");
-                //con.setCatalog("world");
-                // Wait a bit
-                Thread.sleep(1000);
-                // Exit for loop
-                break;
-            }
-            catch (SQLException sqle)
-            {
-                System.out.println("Failed to connect to database attempt " + Integer.toString(i));
-                System.out.println(sqle.getMessage());
-                System.out.println("SQLException: " + sqle.getMessage());
-                System.out.println("SQLState: " + sqle.getSQLState());
-                System.out.println("VendorError: " + sqle.getErrorCode());
-            }
-            catch (InterruptedException ie)
-            {
-                System.out.println("Thread interrupted? Should not happen.");
-            }
-        }
+        Connection con = connect();
+
         /**
          * END OF DATABASE CONNECTION CODE
          */
@@ -212,6 +170,57 @@ public class App
          */
         return queries;
 
+    }
+
+    public static Connection connect() {
+
+        /**
+         * loading JDBC DRIVER
+         */
+        try
+        {
+            // Load Database driver
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        }
+        // Catch and console log error if error found
+        catch (ClassNotFoundException e)
+        {
+            System.out.println("Could not load SQL driver");
+            System.exit(-1);
+        }
+
+        Connection con = null;
+        int retries = 5;
+        for (int i = 0; i < retries; ++i)
+        {
+            System.out.println("Connecting to database...");
+            try
+            {
+                // Wait a bit for db to start
+                Thread.sleep(30000);
+                // Connect to database
+                con = DriverManager.getConnection("jdbc:mysql://mysql1:3306/world?" + "user=root&password=example");
+                System.out.println("Successfully connected");
+                //con.setCatalog("world");
+                // Wait a bit
+                Thread.sleep(1000);
+                // Exit for loop
+                break;
+            }
+            catch (SQLException sqle)
+            {
+                System.out.println("Failed to connect to database attempt " + Integer.toString(i));
+                System.out.println(sqle.getMessage());
+                System.out.println("SQLException: " + sqle.getMessage());
+                System.out.println("SQLState: " + sqle.getSQLState());
+                System.out.println("VendorError: " + sqle.getErrorCode());
+            }
+            catch (InterruptedException ie)
+            {
+                System.out.println("Thread interrupted? Should not happen.");
+            }
+        }
+        return con;
     }
 
 
