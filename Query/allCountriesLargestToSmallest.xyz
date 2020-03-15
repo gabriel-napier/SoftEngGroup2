@@ -1,1 +1,0 @@
-SELECT Code, Name, Continent, Region, Population, Capital FROM `country` ORDER BY `country`.`Population` DESC
