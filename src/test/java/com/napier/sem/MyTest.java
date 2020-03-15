@@ -31,10 +31,6 @@ class MyTest
          * END OF DATABASE CONNECTION CODE
          */
 
-
-        app.getQueryResult(new App.SQLquery("01","select * from world.city limit 1"),con);
-
-
         assertEquals(con.isValid(5), true);
     }
 
