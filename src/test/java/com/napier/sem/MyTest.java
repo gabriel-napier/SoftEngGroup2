@@ -25,7 +25,7 @@ class MyTest
          * Connection to the database, throw relevant exception in case of no success
         */
 
-         Connection con = app.connect("jdbc:mysql://127.0.0.1:33060/world?" + "user=root&password=example");
+         Connection con = app.connect("jdbc:mysql://127.0.0.1:3306/world?" + "user=root&password=example");
 
         /**
          * END OF DATABASE CONNECTION CODE
