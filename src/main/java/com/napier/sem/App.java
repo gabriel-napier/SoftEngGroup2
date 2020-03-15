@@ -191,6 +191,7 @@ public class App
 
         Connection con = null;
         int retries = 5;
+        boolean timeout = false;
         for (int i = 0; i < retries; ++i)
         {
             System.out.println("Connecting to database...");
@@ -199,7 +200,9 @@ public class App
                 // Wait a bit for db to start
                 Thread.sleep(30000);
                 // Connect to database
-                con = DriverManager.getConnection("jdbc:mysql://mysql1:3306/world?" + "user=root&password=example");
+                String dbstring = "jdbc:mysql://mysql1:3306/world?" + "user=root&password=example";
+                if (timeout == true) { dbstring = "jdbc:mysql://mysql1:33060/world?" + "user=root&password=example";}
+                con = DriverManager.getConnection(dbstring);
                 System.out.println("Successfully connected");
                 //con.setCatalog("world");
                 // Wait a bit
@@ -214,6 +217,7 @@ public class App
                 System.out.println("SQLException: " + sqle.getMessage());
                 System.out.println("SQLState: " + sqle.getSQLState());
                 System.out.println("VendorError: " + sqle.getErrorCode());
+                timeout = true;
             }
             catch (InterruptedException ie)
             {
