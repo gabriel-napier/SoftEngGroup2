@@ -1,1 +1,0 @@
-SELECT city.Name, country.Name, city.Population FROM `country` JOIN `city` ON city.CountryCode = country.Code WHERE country.Capital = city.ID GROUP BY country.Name ORDER BY `city`.`Population` DESC
