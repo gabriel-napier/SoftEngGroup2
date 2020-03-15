@@ -31,7 +31,7 @@ public class AppIntegrationTest
          */
         String test = app.getQueryResult(new App.SQLquery("01","select * from world.city limit 1"),con);
 
-        assertEquals(test,"1,Kabul,AFG,Kabol,1780000");
+        assertEquals(test,"1,Kabul,AFG,Kabol,1780000" + "\n");
     }
 
 }
