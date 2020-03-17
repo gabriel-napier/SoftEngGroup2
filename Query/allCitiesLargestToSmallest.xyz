@@ -1,0 +1,1 @@
+SELECT city.Name, country.Name as 'Country', District, city.Population FROM `city` JOIN `country` ON city.CountryCode = country.Code ORDER BY `city`.`Population` DESC
